@@ -1,0 +1,10 @@
+.movie {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+.movie img {
+    height: 100%;
+    width: 50%;
+}
