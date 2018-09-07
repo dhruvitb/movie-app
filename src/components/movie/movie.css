@@ -2,9 +2,21 @@
     flex: 0 1 50%;
 }
 
+@media (min-width: 600px) {
+    .movie {
+        flex: 0 1 33.33vw;  
+    }
+}
+
 @media (min-width: 1000px) {
     .movie {
         flex: 0 1 33.33%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .movie {
+        flex: 0 1 20%;
     }
 }
 
