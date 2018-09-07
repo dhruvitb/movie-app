@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Movie from '../../components/movie/movie'
 import axios from 'axios'
 import authToken from '../../auth/auth'
+import './movies.css'
 
 class Movies extends Component {
 
