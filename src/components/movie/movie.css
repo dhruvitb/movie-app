@@ -10,7 +10,7 @@
 
 @media (min-width: 1000px) {
     .movie {
-        flex: 0 1 33.33%;
+        flex: 0 1 25%;
     }
 }
 
