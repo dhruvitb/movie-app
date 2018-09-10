@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Header from '../../components/header/header';
 import authToken from '../../auth/auth';
 import axios from 'axios';
+import './movieInfo.css'
 
 class movieInfo extends Component {
 
@@ -23,18 +24,23 @@ class movieInfo extends Component {
         if (this.state.movieInfo !== null) {
         const baseImgURL = `http://image.tmdb.org/t/p/w780`;
         displayInfo = 
-            <div className="movieInfo">
+            <div>
                 <Header colour={'#111111'}>Movie Detail</Header>
                 <Header colour={'#17A589'}>{this.state.movieInfo.title}</Header>
-                <div classname="poster">
-                    <img src={baseImgURL + this.state.movieInfo.poster_path} alt='Not Found'/>
-                </div>
-                <div className='movieStats'>
-                    <h1>{this.state.movieInfo.release_date.substring(0,4)}</h1>
-                    <h2>{this.state.movieInfo.runtime} min</h2>
-                </div>
-                <div className='sysnopsis'>
-                    <p>{this.state.movieInfo.overview}</p>
+                <div className='content'>
+                    <div className="poster">
+                            <img src={baseImgURL + this.state.movieInfo.poster_path} alt='Not Found'/>
+                    </div>
+                    <div className='movieInfo'>
+                        <div className='movieStats'>
+                            <h1>{this.state.movieInfo.release_date.substring(0,4)}</h1>
+                            <h4>{this.state.movieInfo.runtime} min</h4>
+                            <h3>{this.state.movieInfo.vote_average}/10</h3>
+                        </div>
+                        <div className='synopsis'>
+                            <p>{this.state.movieInfo.overview}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         }
