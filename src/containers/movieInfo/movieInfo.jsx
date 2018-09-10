@@ -8,16 +8,17 @@ class movieInfo extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            movieInfo: null
+        }
+    }
+
+    componentDidMount() {
         const movieId = this.props.match.params.MovieId;
         const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${authToken}`;
         axios.get(movieURL).then(response => {
             this.setState({movieInfo: response.data})
-            console.log(this.state.movieInfo);
         })
-    }
-
-    state = {
-        movieInfo: null
     }
 
     render() {
