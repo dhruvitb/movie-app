@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Movies from './layout/movies/movies';
+import Movies from './containers/movies/movies';
 import Header from './components/header/header';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import MovieInfo from './layout/movieInfo/movieInfo'
-// import Movie from './components/movie/movie';
+import MovieInfo from './containers/movieInfo/movieInfo'
 
 class App extends Component {
   

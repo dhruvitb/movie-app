@@ -6,24 +6,25 @@ import './movieInfo.css'
 
 class movieInfo extends Component {
 
-    state = {
-        movieInfo: null
-    }
-
-    componentDidMount() {
+    constructor(props) {
+        super(props);
         const movieId = this.props.match.params.MovieId;
-        const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${authToken}`
+        const movieURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${authToken}`;
         axios.get(movieURL).then(response => {
             this.setState({movieInfo: response.data})
             console.log(this.state.movieInfo);
         })
     }
 
+    state = {
+        movieInfo: null
+    }
+
     render() {
         let displayInfo = null;
         if (this.state.movieInfo !== null) {
         const baseImgURL = `http://image.tmdb.org/t/p/w780`;
-        displayInfo = 
+        displayInfo =
             <div>
                 <Header colour={'#111111'}>Movie Detail</Header>
                 <Header colour={'#17A589'}>{this.state.movieInfo.title}</Header>

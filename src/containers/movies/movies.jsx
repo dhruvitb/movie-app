@@ -10,8 +10,8 @@ class Movies extends Component {
         super();
         const topMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=${authToken}&language=en-US&sort_by=popularity.desc&page=1`
         axios.get(topMoviesURL).then(response => {
-            this.setState({moviesData: response.data.results})
-            console.log(this.state.moviesData);
+            this.setState({moviesData: response.data.results});
+            // console.log(this.state.moviesData);
         })
     }
 
@@ -25,7 +25,7 @@ class Movies extends Component {
         if (this.state.moviesData !== null) {
             movies = (this.state.moviesData.map(movie => (
                 <Movie imgURL={baseImgURL + movie.poster_path} key={movie.title} data={movie}/>
-            )))
+            )));
         }
         return <div className="movies">{movies}</div>;
     }
