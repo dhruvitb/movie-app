@@ -33,7 +33,7 @@ class movieInfo extends Component {
                     </div>
                     <div className='movieInfo'>
                         <div className='movieStats'>
-                            <h1>{this.state.movieInfo.release_date.substring(0,4)}</h1>
+                            <h1>Release: {this.state.movieInfo.release_date.substring(0,4)}</h1>
                             <h4>{this.state.movieInfo.runtime} min</h4>
                             <h3>{this.state.movieInfo.vote_average}/10</h3>
                         </div>
